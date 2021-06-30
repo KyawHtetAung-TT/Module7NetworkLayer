@@ -27,9 +27,9 @@ struct LoginFailed : Decodable {
     
 }
 
-struct LoginReqeust : Decodable {
+struct LoginReqeust : Encodable {
     let username : String
-    let passwrod : String
+    let password : String
     let reqeustToken : String
 
     enum  CodingKeys: String, CodingKey {

@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     private func login(){
             
-        let url = URL(string: "(BaseURL)/authentication/token/validate_with_login?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
+        let url = URL(string: "\(BaseURL)/authentication/token/validate_with_login?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
         
         var urlRequest = URLRequest(url: url)
     
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 //        let bodyData = try! JSONSerialization.data(withJSONObject: reqeustBody, options: .init())
 //        urlRequest.httpBody = bodyData
 //
-        let requestObject = LoginReqeust(username: moiveDbUserName , passwrod: moiveDbPassword, reqeustToken: requestToken)
+        let requestObject = LoginReqeust(username: moiveDbUserName , password: moiveDbPassword, reqeustToken: requestToken)
         let requestData = try! JSONEncoder().encode(requestObject)
         urlRequest.httpBody = requestData
         
