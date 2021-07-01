@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -71,19 +71,67 @@
 		9821D9E2268795490024AD76 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				9821D9E3268795490024AD76 /* AppDelegate.swift */,
-				9821D9E5268795490024AD76 /* SceneDelegate.swift */,
-				9821D9F9268865210024AD76 /* Consultants.swift */,
-				9821D9F7268863DF0024AD76 /* Models.swift */,
-				9826AF14268DE59B008DD7AA /* SearchSeriesResponse.swift */,
-				9826AF16268E1228008DD7AA /* UpcomingMovieLIst.swift */,
-				9821D9E7268795490024AD76 /* ViewController.swift */,
-				9821D9E9268795490024AD76 /* Main.storyboard */,
-				9821D9EC2687954B0024AD76 /* Assets.xcassets */,
-				9821D9EE2687954B0024AD76 /* LaunchScreen.storyboard */,
+				9826AF18268E2178008DD7AA /* Resources */,
+				9826AF19268E2193008DD7AA /* Storyboard */,
+				9826AF1D268E220D008DD7AA /* utils */,
+				9826AF1A268E21AE008DD7AA /* Controller */,
+				9826AF1B268E21C5008DD7AA /* Model */,
+				9826AF1C268E21D6008DD7AA /* Delegate */,
 				9821D9F12687954B0024AD76 /* Info.plist */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		9826AF18268E2178008DD7AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9821D9EC2687954B0024AD76 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9826AF19268E2193008DD7AA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9821D9E9268795490024AD76 /* Main.storyboard */,
+				9821D9EE2687954B0024AD76 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9826AF1A268E21AE008DD7AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9821D9E7268795490024AD76 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9826AF1B268E21C5008DD7AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9821D9F7268863DF0024AD76 /* Models.swift */,
+				9826AF14268DE59B008DD7AA /* SearchSeriesResponse.swift */,
+				9826AF16268E1228008DD7AA /* UpcomingMovieLIst.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9826AF1C268E21D6008DD7AA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9821D9E3268795490024AD76 /* AppDelegate.swift */,
+				9821D9E5268795490024AD76 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		9826AF1D268E220D008DD7AA /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				9821D9F9268865210024AD76 /* Consultants.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		ACCA019A90476F4FA583D1F9 /* Pods */ = {
@@ -92,7 +140,6 @@
 				B7705A1C970EE945680447EE /* Pods-NetworkLayer.debug.xcconfig */,
 				2D9E4DDC3B333346518D31C1 /* Pods-NetworkLayer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

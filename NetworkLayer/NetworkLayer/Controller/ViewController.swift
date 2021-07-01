@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblGeneral: UILabel!
     
     
     let AppConstantsBaseURL = "https://api.themoviedb.org/3"
@@ -31,6 +32,20 @@ class ViewController: UIViewController {
 
         let url = URL(string: "\(AppConstantsBaseURL)/movie/upcoming?.api_key=\(AppConstantsapiKey)")!
 
+//        var urlRequest = URLRequest(url: url)
+//        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+//            if let data = data{
+//                let upcomingMovieList = try! JSONDecoder().decode(UpcomingMoiveList.self, from : data)
+//                DispatchQueue.main.async {
+//                    self.lblGeneral.text = upcomingMovieList.results?.map{$0.title ?? "undefined"}.reduce
+//                    if value1.isEmpty{
+//                        return value2
+//                    }else{
+//                        return " \(value1),\(value2)"
+//                    })
+//                }
+//            }
+            
         var urlRequest = URLRequest(url: url)
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let data = data{
