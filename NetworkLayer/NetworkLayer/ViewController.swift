@@ -18,6 +18,27 @@ class ViewController: UIViewController {
 //        getGenresList()
 }
 
+    // MARK: - UpcomingMovieList
+    
+    private func getUpcomingMoiveList(){
+        
+        let url = URL(string: "\(AppConstants.BaseURL)/movie/upcoming?.api_key=\(AppConstants.apiKey)")
+        
+        var urlRequest = URLRequest(url: url)
+        URLSession.shared.dataTask(with: URLRequest) { (data, response, error) in
+        
+        let upcomingMovieList = try! JSONDecoder().decode(UpcomingMoiveList.self, from : data!)
+        upcomingMovieList.results?.forEach({ (item) in
+            print(item.originalTitle ?? "undefined")
+            })
+        }.resume()
+        
+    }
+
+    
+    
+    // MARK: - Login
+    
     private func login(){
             
         let url = URL(string: "\(BaseURL)/authentication/token/validate_with_login?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
@@ -71,7 +92,7 @@ class ViewController: UIViewController {
         
 }
 
-    
+    // MARK: - getGenresList
     
     private func  getGenresList(){
 
@@ -95,7 +116,8 @@ class ViewController: UIViewController {
 //            print("error \(error)")
 //        }.resume()
 
-
+//        session.dataTask(with: <#T##URL#>, completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
+        
 //        let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
 //        session.dataTask(with: url)
 //    // completion handler
@@ -134,13 +156,13 @@ class ViewController: UIViewController {
 //            return MoiveGenre(id: id, name: name)
 //        }
 //            print(moiveGenres.count)
-        
-        print(genreList.genres.count)
-        
+//
+//        print(genreList.genres.count)
+
     }.resume()
-    
+
     }
-    
+
 }
 
 //struct MovieGenreList : Decodable {

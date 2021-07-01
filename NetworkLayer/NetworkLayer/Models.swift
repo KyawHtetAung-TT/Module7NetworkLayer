@@ -8,13 +8,13 @@
 import Foundation
 
 
-struct LoginSuccess : Decodable {
+struct LoginSuccess : Codable {
     let success : Bool?
     let statusCode : Int?
     let statusMessage : String?
 }
 
-struct LoginFailed : Decodable {
+struct LoginFailed : Codable {
     let success : Bool?
     let statusCode : Int?
     let statusMessage : String?
@@ -27,7 +27,7 @@ struct LoginFailed : Decodable {
     
 }
 
-struct LoginReqeust : Encodable {
+struct LoginReqeust : Codable {
     let username : String
     let password : String
     let reqeustToken : String
@@ -39,12 +39,14 @@ struct LoginReqeust : Encodable {
     }
 }
 
-struct MovieGenreList : Decodable {
+struct MovieGenreList : Codable {
     let genres : [MoiveGenre]
 }
 
-struct MoiveGenre : Decodable{
+struct MoiveGenre : Codable{
     let id : Int
     let name : String
 //    let anotherProperty : String?   // data မပါရင်သုံးဖို
 }
+
+

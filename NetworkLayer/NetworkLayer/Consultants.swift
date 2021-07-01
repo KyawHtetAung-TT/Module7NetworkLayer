@@ -9,5 +9,5 @@ import Foundation
 
 let moiveDbUserName = "kyawhtetaung"
 let moiveDbPassword = "Toyot@123"
-let requestToken = "d70dbc77bcde54ce39e555b2caf5e7b78ab354b0"
+let requestToken = "bd009526e7bec5855b955f05dfe2d1ea1c6994f0"
     
