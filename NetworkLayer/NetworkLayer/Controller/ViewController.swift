@@ -11,10 +11,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var lblGeneral: UILabel!
     
-    
-    let AppConstantsBaseURL = "https://api.themoviedb.org/3"
-    let AppConstantsapiKey = "9a86d2ae7b1cd3a67291cb0c6070ac90"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
        

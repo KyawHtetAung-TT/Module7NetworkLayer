@@ -12,6 +12,12 @@ struct LoginSuccess : Codable {
     let success : Bool?
     let statusCode : Int?
     let statusMessage : String?
+    
+    enum  CodingKeys: String, CodingKey {
+        case success
+        case statusCode = "status_code"
+        case statusMessage = "status_message"
+    }
 }
 
 struct LoginFailed : Codable {
@@ -39,9 +45,23 @@ struct LoginReqeust : Codable {
     }
 }
 
+struct RequestTokenResponse : Codable {
+    let success : Bool
+    let expiresAt : String
+    let reqeustToken : String
+
+    enum  CodingKeys: String, CodingKey {
+        case success
+        case expiresAt = "expires_at"
+        case reqeustToken = "request_token"
+    }
+}
+
+
 struct MovieGenreList : Codable {
     let genres : [MoiveGenre]
 }
+
 
 struct MoiveGenre : Codable{
     let id : Int
@@ -49,4 +69,4 @@ struct MoiveGenre : Codable{
 //    let anotherProperty : String?   // data မပါရင်သုံးဖို
 }
 
-
+var movieGenres = [MoiveGenre]()

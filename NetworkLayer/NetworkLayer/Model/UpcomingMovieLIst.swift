@@ -66,3 +66,4 @@ struct Result: Codable {
 enum OriginalLanguage: String, Codable {
     case en = "en"
 }
+

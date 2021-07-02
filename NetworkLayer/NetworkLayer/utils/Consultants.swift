@@ -9,5 +9,7 @@ import Foundation
 
 let moiveDbUserName = "kyawhtetaung"
 let moiveDbPassword = "Toyot@123"
-let requestToken = "bd009526e7bec5855b955f05dfe2d1ea1c6994f0"
+let requestToken = "70ecc16362249b8edba6a0be03b6c5bfee3fb9d5"
     
+let AppConstantsBaseURL = "https://api.themoviedb.org/3"
+let AppConstantsapiKey = "9a86d2ae7b1cd3a67291cb0c6070ac90"
