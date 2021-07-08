@@ -16,9 +16,8 @@ class ViewController2: UIViewController {
 //        getUpcomingMovieList()
 //        getGenresList()
         initLogin()
-        
+     
     }
-    
 
     private func getUpcomingMovieList(){
         /*
@@ -28,7 +27,7 @@ class ViewController2: UIViewController {
          4. body
          */
         
-        let url = "\(AppConstantsBaseURL)/movie/upcoming?.api_key=\(AppConstantsapiKey)"
+        let url = "\(AppConstants.BaseURL)/movie/upcoming?api_key=\(AppConstants.apiKey)"
         
         AF.request(url)
             
@@ -38,13 +37,13 @@ class ViewController2: UIViewController {
 //            .responseString { (response) in
 //                debugPrint(response.value!)
 //            }
-    
-        
+            
       .responseDecodable(of: UpcomingMoiveList.self) { response in
         // AFDataResopnse<UpcomingMovieList>
         switch response.result{
         case .success(let upcomingMovieList ):
             debugPrint("Upcoming Movies: ")
+            
             upcomingMovieList.results?.forEach{
                 debugPrint($0.originalTitle!)
             }
@@ -55,13 +54,11 @@ class ViewController2: UIViewController {
         
         }
         
-        
-        
     }
     
     private func getGenresList(){
         
-        let url = "\(AppConstantsBaseURL)/genre/movie/list?api_key=\(AppConstantsapiKey)"
+        let url = "\(AppConstants.BaseURL)/genre/movie/list?api_key=\(AppConstants.apiKey)"
         AF.request(url)
             
             .responseDecodable(of: MovieGenreList.self) { response in
@@ -84,9 +81,9 @@ class ViewController2: UIViewController {
     
     private func initLogin(){
         
-        let url = "\(AppConstantsBaseURL)/authentication/token/new?api_key=\(AppConstantsapiKey)"
+        let url = "\(AppConstants.BaseURL)/authentication/token/new?api_key=\(AppConstants.apiKey)"
         AF.request(url)
-            .responseDecodable(of: LoginReqeust.self){ response in
+            .responseDecodable(of: RequestTokenResponse.self){ response in
                 switch response.result{
                 case .success(let data ):
                     let requestToken = data.reqeustToken
@@ -102,10 +99,10 @@ class ViewController2: UIViewController {
     private func login(_ requestToken : String){
         
         //url
-        let url = "\(AppConstantsBaseURL)/authentication/token/validate_with_login?api_key=\(AppConstantsapiKey)"
+        let url = "\(AppConstants.BaseURL)/authentication/token/validate_with_login?api_key=\(AppConstants.apiKey)"
         
         //body
-        let requestObject = LoginReqeust(username: moiveDbUserName , password: moiveDbPassword, reqeustToken: requestToken)
+        let requestObject = LoginReqeust(username: AppConstants.moiveDbUserName , password: AppConstants.moiveDbPassword, reqeustToken: requestToken)
         
 
         AF.request(url, method: .post, parameters: requestObject)
@@ -115,6 +112,7 @@ class ViewController2: UIViewController {
               // AFDataResopnse<UpcomingMovieList>
               switch response.result{
               case .success(let data ):
+                
                 print("Token Status: ", data.success ?? false)
               case .failure(let error):
                   debugPrint(error.errorDescription!)

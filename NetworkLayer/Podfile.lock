@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.4.3)
+  - Wormholy (1.6.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - Wormholy
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Wormholy
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Wormholy: 2e70f64227e010d363f8d33268369f77faf12471
+
+PODFILE CHECKSUM: 4a07d55381bc16f14c139dd786a7333e3f6152eb
+
+COCOAPODS: 1.10.1

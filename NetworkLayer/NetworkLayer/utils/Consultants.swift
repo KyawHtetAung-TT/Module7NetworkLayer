@@ -7,9 +7,14 @@
 
 import Foundation
 
-let moiveDbUserName = "kyawhtetaung"
-let moiveDbPassword = "Toyot@123"
-let requestToken = "70ecc16362249b8edba6a0be03b6c5bfee3fb9d5"
+struct AppConstants{
     
-let AppConstantsBaseURL = "https://api.themoviedb.org/3"
-let AppConstantsapiKey = "9a86d2ae7b1cd3a67291cb0c6070ac90"
+    static let moiveDbUserName = "kyawhtetaung"
+    static let moiveDbPassword = "Toyot@123"
+    static  let requestToken = "61a336d973803efd19431ca184d9b95900ed5137"
+        
+    static let BaseURL = "https://api.themoviedb.org/3"
+    static  let apiKey = "9a86d2ae7b1cd3a67291cb0c6070ac90"
+
+}
+

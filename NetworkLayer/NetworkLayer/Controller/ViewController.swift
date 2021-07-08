@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     private func getUpcomingMoiveList(){
 
-        let url = URL(string: "\(AppConstantsBaseURL)/movie/upcoming?.api_key=\(AppConstantsapiKey)")!
+        let url = URL(string: "\(AppConstants.BaseURL)/movie/upcoming?api_key=\(AppConstants.apiKey)")!
 
 //        var urlRequest = URLRequest(url: url)
 //        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     
     private func login(){
             
-        let url = URL(string: "\(AppConstantsBaseURL)/authentication/token/validate_with_login?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
+        let url = URL(string: "\(AppConstants.BaseURL)/authentication/token/validate_with_login?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
         
         var urlRequest = URLRequest(url: url)
     
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
 //        let bodyData = try! JSONSerialization.data(withJSONObject: reqeustBody, options: .init())
 //        urlRequest.httpBody = bodyData
 //
-        let requestObject = LoginReqeust(username: moiveDbUserName , password: moiveDbPassword, reqeustToken: requestToken)
+        let requestObject = LoginReqeust(username: AppConstants.moiveDbUserName , password: AppConstants.moiveDbPassword, reqeustToken: AppConstants.requestToken)
         let requestData = try! JSONEncoder().encode(requestObject)
         urlRequest.httpBody = requestData
         
@@ -124,7 +124,7 @@ class ViewController: UIViewController {
 //    let url = URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
     
         
-    let url = URL(string: "\(AppConstantsBaseURL)/genre/movie/list?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
+        let url = URL(string: "\(AppConstants.BaseURL)/genre/movie/list?api_key=9a86d2ae7b1cd3a67291cb0c6070ac90")!
     
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = "GET"  // case sensitive
